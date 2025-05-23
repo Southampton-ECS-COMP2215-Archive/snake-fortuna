@@ -15,7 +15,7 @@
 
 uint16_t white_palette[16];
 
-void main(void) {
+int main(void) {
     set_prescaler_log2(0);
     cli();
     EIMSK = 0;
@@ -26,4 +26,5 @@ void main(void) {
 
     load_scores();
     game_loop(setup_mainmenu, tick_mainmenu);
+    __builtin_unreachable();
 }
